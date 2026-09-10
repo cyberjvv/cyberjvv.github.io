@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八度电影院-在线观影指南与热门影片推荐</title>
+<meta name="description" content="八度电影院提供热门电影、剧集与经典影片的观影信息，涵盖选片指南、类型推荐、观影技巧与常见问题，帮助你更高效地找到想看的影片。">
+<meta name="keywords" content="八度电影院,在线观影,电影推荐,热门影片,观影指南,电影类型">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-deep: #0d0f17;
+    --bg-panel: #161a26;
+    --bg-card: #1d2233;
+    --gold: #e8b44a;
+    --gold-soft: #f5d488;
+    --text-main: #eef1f8;
+    --text-sub: #a4acc2;
+    --line: #2a3145;
+  }
+
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(13, 15, 23, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--gold), #b8862c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #1a1405;
+    font-weight: 800;
+  }
+
+  .brand span {
+    color: var(--gold);
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    font-size: 15px;
+    color: var(--text-sub);
+  }
+
+  .main-nav a:hover {
+    color: var(--gold-soft);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--text-main);
+    font-size: 18px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 72px 0 60px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(232, 180, 74, 0.16), transparent 45%),
+      radial-gradient(circle at 85% 0%, rgba(80, 110, 220, 0.18), transparent 50%),
+      linear-gradient(180deg, #10131d 0%, #0d0f17 100%);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid rgba(232, 180, 74, 0.5);
+    border-radius: 999px;
+    color: var(--gold-soft);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.3;
+    font-weight: 800;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero p {
+    color: var(--text-sub);
+    font-size: 16px;
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 11px 26px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold), #c9932f);
+    color: #1a1405;
+  }
+
+  .btn-gold:hover {
+    filter: brightness(1.08);
+  }
+
+  .btn-ghost {
+    border-color: var(--line);
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold-soft);
+  }
+
+  .hero-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .hero-panel h2 {
+    font-size: 15px;
+    color: var(--gold-soft);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .quick-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quick-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-sub);
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .quick-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .quick-list b {
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  /* ---------- Section common ---------- */
+  section {
+    padding: 60px 0;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .section-head h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+
+  .section-head p {
+    color: var(--text-sub);
+    font-size: 14px;
+    max-width: 480px;
+  }
+
+  /* ---------- Category grid ---------- */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .cat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 20px;
+    transition: 0.25s;
+  }
+
+  .cat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(232, 180, 74, 0.55);
+  }
+
+  .cat-card .icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .cat-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .cat-card p {
+    font-size: 13px;
+    color: var(--text-sub);
+  }
+
+  /* ---------- Movie list ---------- */
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .movie-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s;
+  }
+
+  .movie-card:hover {
+    border-color: rgba(232, 180, 74, 0.5);
+    transform: translateY(-3px);
+  }
+
+  .movie-cover {
+    height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 2px;
+  }
+
+  .cover-a { background: linear-gradient(135deg, #2b3a67, #4a5fa8); }
+  .cover-b { background: linear-gradient(135deg, #6b2e3f, #a84a5f); }
+  .cover-c { background: linear-gradient(135deg, #1f5b52, #2f8a7a); }
+  .cover-d { background: linear-gradient(135deg, #5a4418, #a37c2a); }
+  .cover-e { background: linear-gradient(135deg, #3a2a5c, #6a4fa0); }
+  .cover-f { background: linear-gradient(135deg, #26384a, #3f6b8a); }
+
+  .movie-body {
+    padding: 18px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .movie-body h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .movie-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .chip {
+    font-size: 12px;
+    color: var(--gold-soft);
+    border: 1px solid rgba(232, 180, 74, 0.4);
+    border-radius: 999px;
+    padding: 2px 10px;
+  }
+
+  .movie-body p {
+    font-size: 13.5px;
+    color: var(--text-sub);
+    flex: 1;
+  }
+
+  /* ---------- Guide ---------- */
+  .guide {
+    background: var(--bg-panel);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+
+  .guide-item {
+    display: flex;
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px;
+  }
+
+  .guide-num {
+    flex: 0 0 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(232, 180, 74, 0.14);
+    color: var(--gold);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .guide-item h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .guide-item p {
+    font-size: 13.5px;
+    color: var(--text-sub);
+  }
+
+  /* ---------- Ranking aside ---------- */
+  .split {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .rank-box {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    position: sticky;
+    top: 88px;
+  }
+
+  .rank-box h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: var(--gold-soft);
+    letter-spacing: 0.5px;
+  }
+
+  .rank-list {
+    list-style: none;
+  }
+
+  .rank-list li {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 14px;
+    align-items: baseline;
+  }
+
+  .rank-list li:last-child {
+    border-bottom: none;
+  }
+
+  .rank-no {
+    font-weight: 800;
+    color: var(--gold);
+    font-size: 15px;
+    flex: 0 0 22px;
+  }
+
+  .rank-list small {
+    display: block;
+    color: var(--text-sub);
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+
+  .tips-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tips-list li {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+
+  .tips-list h3 {
+    font-size: 15.5px;
+    margin-bottom: 6px;
+  }
+
+  .tips-list p {
+    font-size: 13.5px;
+    color: var(--text-sub);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq {
+    background: var(--bg-panel);
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 880px;
+  }
+
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .faq-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--gold-soft);
+  }
+
+  .faq-item p {
+    font-size: 14px;
+    color: var(--text-sub);
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    background: #0a0c12;
+    border-top: 1px solid var(--line);
+    padding: 46px 0 26px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 34px;
+  }
+
+  .footer-grid h3 {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: var(--gold-soft);
+  }
+
+  .footer-grid ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .footer-grid li,
+  .footer-grid p {
+    font-size: 13.5px;
+    color: var(--text-sub);
+  }
+
+  .footer-grid a:hover {
+    color: var(--gold-soft);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #6f7789;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero-grid,
+    .split {
+      grid-template-columns: 1fr;
+    }
+    .cat-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .movie-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .rank-box {
+      position: static;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: #10131d;
+      border-bottom: 1px solid var(--line);
+      padding: 16px 20px;
+    }
+    .main-nav.open {
+      display: block;
+    }
+    .main-nav ul {
+      flex-direction: column;
+      gap: 14px;
+    }
+    .nav-toggle {
+      display: block;
+    }
+    .hero {
+      padding: 48px 0 42px;
+    }
+    .hero h1 {
+      font-size: 28px;
+    }
+    .cat-grid,
+    .movie-grid,
+    .guide-grid,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    section {
+      padding: 44px 0;
+    }
+    .section-head h2 {
+      font-size: 21px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark">八</div>
+      八度<span>电影院</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#categories">影片分类</a></li>
+        <li><a href="#featured">热门推荐</a></li>
+        <li><a href="#guide">选片指南</a></li>
+        <li><a href="#ranking">观影榜单</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">观影信息 · 选片参考</span>
+        <h1>在<em>八度电影院</em><br>找到下一部想看的电影</h1>
+        <p>八度电影院是一个面向普通观众的观影信息页面，围绕电影类型、剧情简介、选片思路和观影方式展开整理，帮助你在众多影片中更快定位到符合自己口味的内容，减少无效浏览。</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#featured">浏览热门影片</a>
+          <a class="btn btn-ghost" href="#guide">查看选片指南</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>快速导航</h2>
+        <ul class="quick-list">
+          <li><span>按情绪选片</span><b>放松 / 烧脑 / 治愈</b></li>
+          <li><span>按场景选片</span><b>独处 / 聚会 / 亲子</b></li>
+          <li><span>按篇幅选片</span><b>短片 / 长片 / 剧集</b></li>
+          <li><span>按语言选片</span><b>华语 / 欧美 / 日韩</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>影片分类</h2>
+        <p>先确定类型方向，再挑选具体作品，通常比漫无目的地浏览更有效率。以下分类覆盖了大多数观众的日常观影需求。</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="icon">🎬</div>
+          <h3>剧情与文艺</h3>
+          <p>节奏相对舒缓，注重人物塑造与情感表达，适合愿意静下心体会故事层次的观众。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">🚀</div>
+          <h3>科幻与奇幻</h3>
+          <p>以世界观设定和想象力为核心，常见于太空、未来社会、魔法体系等题材。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">🕵️</div>
+          <h3>悬疑与犯罪</h3>
+          <p>围绕案件、推理或心理博弈展开，观看时注意力集中，适合喜欢动脑的观众。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">😂</div>
+          <h3>喜剧与轻松</h3>
+          <p>以幽默对白和夸张情境为主，适合下班后放松，或与朋友一起观看。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">❤️</div>
+          <h3>爱情与青春</h3>
+          <p>聚焦情感关系与成长经历，篇幅通常不长，适合情绪化观影时段。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">🗺️</div>
+          <h3>动作与冒险</h3>
+          <p>强调场面调度与节奏感，追逐、格斗、探险是常见元素，视觉冲击较强。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">👨‍👩‍👧</div>
+          <h3>家庭与动画</h3>
+          <p>内容相对温和，适合亲子共同观看，也适合成年人回味简单的叙事乐趣。</p>
+        </article>
+        <article class="cat-card">
+          <div class="icon">📖</div>
+          <h3>纪录与纪实</h3>
+          <p>以真实人物、事件或自然现象为对象，适合对特定领域有好奇心的观众。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section id="featured" style="background:var(--bg-panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>热门推荐</h2>
+        <p>以下为不同风格方向的代表性影片类型示例，用于说明各类作品的观看体验差异，便于你按需选择。</p>
+      </div>
+      <div class="movie-grid">
+        <article class="movie-card">
+          <div class="movie-cover cover-a">剧情</div>
+          <div class="movie-body">
+            <h3>现实题材剧情片</h3>
+            <div class="movie-meta">
+              <span class="chip">慢节奏</span>
+              <span class="chip">人物驱动</span>
+            </div>
+            <p>以普通人的生活处境为切口，通过细节累积推动情绪，适合在安静的夜晚独自观看。</p>
+          </div>
+        </article>
+        <article class="movie-card">
+          <div class="movie-cover cover-b">悬疑</div>
+          <div class="movie-body">
+            <h3>推理悬疑作品</h3>
+            <div class="movie-meta">
+              <span class="chip">烧脑</span>
+              <span class="chip">反转</span>
+            </div>
+            <p>线索分散在叙事各处，需要观众主动拼接信息，适合喜欢边看边推理的观众。</p>
+          </div>
+        </article>
+        <article class="movie-card">
+          <div class="movie-cover cover-c">科幻</div>
+          <div class="movie-body">
+            <h3>未来设定科幻片</h3>
+            <div class="movie-meta">
+              <span class="chip">世界观</span>
+              <span class="chip">视觉向</span>
+            </div>
+            <p>通过架空设定讨论技术、社会与人性的关系，画面信息量大，建议大屏观看。</p>
+          </div>
+        </article>
+        <article class="movie-card">
+          <div class="movie-cover cover-d">喜剧</div>
+          <div class="movie-body">
+            <h3>都市轻喜剧</h3>
+            <div class="movie-meta">
+              <span class="chip">轻松</span>
+              <span class="chip">对白向</span>
+            </div>
+            <p>依靠密集的对话和情境反差制造笑点，适合聚会场合或需要放松心情的时候。</p>
+          </div>
+        </article>
+        <article class="movie-card">
+          <div class="movie-cover cover-e">动画</div>
+          <div class="movie-body">
+            <h3>合家欢动画</h3>
+            <div class="movie-meta">
+              <span class="chip">亲子</span>
+              <span class="chip">温情</span>
+            </div>
+            <p>故事线清晰，情绪表达直接，既能吸引儿童，也能让成年人获得共鸣。</p>
+          </div>
+        </article>
+        <article class="movie-card">
+          <div class="movie-cover cover-f">纪录</div>
+          <div class="movie-body">
+            <h3>自然与人文纪录片</h3>
+            <div class="movie-meta">
+              <span class="chip">真实</span>
+              <span class="chip">知识向</span>
+            </div>
+            <p>以真实影像记录自然生态或社会变迁，节奏平稳，适合作为日常背景观看。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section id="guide" class="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>选片指南</h2>
+        <p>面对数量庞大的影片资源，用一套简单的筛选逻辑，可以明显减少选片时的时间消耗。</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-item">
+          <div class="guide-num">01</div>
+          <div>
+            <h3>先确定观看目的</h3>
+            <p>是为了放松、打发时间，还是希望获得思考和情绪触动？目的不同，适合的类型差别很大。放松时优先考虑喜剧、动作；想沉浸思考时，剧情片和悬疑片更合适。</p>
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">02</div>
+          <div>
+            <h3>控制单次时长</h3>
+            <p>先确认自己有多少可支配时间。时间紧张时选择篇幅较短的作品，避免因为中途打断而影响观感；时间充裕时再考虑世界观较复杂的长片或剧集。</p>
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">03</div>
+          <div>
+            <h3>参考简介而非只看热度</h3>
+            <p>热度高不代表符合个人口味。先阅读剧情简介和类型标签，确认题材方向是否感兴趣，再决定是否观看，通常比盲目跟风更省时间。</p>
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">04</div>
+          <div>
+            <h3>留意观看环境</h3>
+            <p>悬疑、科幻类作品信息密度高，适合在安静、屏幕较大的环境下观看；喜剧、综艺类内容对设备要求较低，通勤或碎片时间也能获得不错的体验。</p>
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">05</div>
+          <div>
+            <h3>建立个人片单</h3>
+            <p>把感兴趣但暂时没时间看的作品集中记录，形成自己的待看清单。这样在空闲时可以直接从清单中挑选，避免临时搜索带来的犹豫。</p>
+          </div>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">06</div>
+          <div>
+            <h3>适当拓展类型边界</h3>
+            <p>长期只看单一类型容易产生审美疲劳。每隔一段时间尝试一个不熟悉的题材，往往能发现新的兴趣点，也能让观影体验保持新鲜感。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ranking + Tips -->
+  <section id="ranking">
+    <div class="wrap split">
+      <div>
+        <div class="section-head">
+          <h2>观影小贴士</h2>
+          <p>一些实用的观影习惯，能帮助你更好地安排时间，也更充分地享受影片内容。</p>
+        </div>
+        <ul class="tips-list">
+          <li>
+            <h3>提前了解分级与内容提示</h3>
+            <p>部分影片可能包含较强的情节冲突或视觉刺激，提前了解内容方向，有助于判断是否适合自己或家人观看，尤其是亲子观影场景。</p>
+          </li>
+          <li>
+            <h3>避免剧透式搜索</h3>
+            <p>在观看前尽量只查看简介和类型标签，避免浏览包含关键情节的讨论。悬疑、推理类作品一旦被剧透，观看体验会明显下降。</p>
+          </li>
+          <li>
+            <h3>合理安排连续观看</h3>
+            <p>连续观看多部高信息密度的作品容易疲劳。适当间隔，或者在不同类型之间交替，可以让注意力保持更好的状态。</p>
+          </li>
+          <li>
+            <h3>记录观后感</h3>
+            <p>简单记下对影片的印象和喜欢的部分，既能加深记忆，也方便日后向朋友推荐或回顾自己的观影偏好变化。</p>
+          </li>
+        </ul>
+      </div>
+      <aside class="rank-box">
+        <h2>类型热度参考方向</h2>
+        <ol class="rank-list">
+          <li>
+            <span class="rank-no">1</span>
+            <div>剧情与现实主义题材<small>关注人物处境与情感表达</small></div>
+          </li>
+          <li>
+            <span class="rank-no">2</span>
+            <div>悬疑与犯罪推理<small>强调逻辑与信息拼合</small></div>
+          </li>
+          <li>
+            <span class="rank-no">3</span>
+            <div>科幻与未来设定<small>世界观与视觉呈现并重</small></div>
+          </li>
+          <li>
+            <span class="rank-no">4</span>
+            <div>喜剧与都市生活<small>适合放松与社交场景</small></div>
+          </li>
+          <li>
+            <span class="rank-no">5</span>
+            <div>动画与家庭向<small>覆盖年龄层较广</small></div>
+          </li>
+          <li>
+            <span class="rank-no">6</span>
+            <div>纪录片与纪实<small>真实题材的稳定受众</small></div>
+          </li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <p>整理了一些观众在选片和观影过程中经常遇到的疑问，供参考。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>八度电影院主要提供什么内容？</h3>
+          <p>本页面围绕电影观影信息展开，包括影片类型介绍、选片思路、观影建议和常见问题整理，帮助观众更高效地了解影片方向，做出适合自己的观看选择。</p>
+        </div>
+        <div class="faq-item">
+          <h3>如何快速判断一部影片是否适合自己？</h3>
+          <p>可以先看类型标签和剧情简介，确认题材方向是否符合兴趣；再结合自己的观看时间、情绪状态和观看环境做判断。类型与目的匹配，通常比单纯看热度更可靠。</p>
+        </div>
+        <div class="faq-item">
+          <h3>观影时容易被剧透怎么办？</h3>
+          <p>在正式观看前，尽量避免浏览带有情节细节的讨论区或评论区。如果必须搜索，建议只使用影片名称加类型关键词，避免看到关键剧情信息。</p>
+        </div>
+        <div class="faq-item">
+          <h3>亲子观影需要注意什么？</h3>
+          <p>建议优先选择内容温和、节奏清晰的动画或家庭题材作品，并提前了解影片是否包含可能引起不适的情节。观看过程中适当与孩子交流，也有助于理解剧情。</p>
+        </div>
+        <div class="faq-item">
+          <h3>为什么建议建立个人片单？</h3>
+          <p>片单可以把零散的观影兴趣集中起来。当你有空闲时间时，直接从片单中挑选即可，避免反复搜索和犹豫，也能更清晰地了解自己的观影偏好。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>八度电影院</h3>
+        <p>围绕电影类型、选片方法与观影建议整理内容，帮助观众更从容地找到想看的影片，提升日常观影体验。</p>
+      </div>
+      <div>
+        <h3>内容导航</h3>
+        <ul>
+          <li><a href="#categories">影片分类</a></li>
+          <li><a href="#featured">热门推荐</a></li>
+          <li><a href="#guide">选片指南</a></li>
+          <li><a href="#ranking">观影小贴士</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>常见类型</h3>
+        <ul>
+          <li><a href="#categories">剧情与文艺</a></li>
+          <li><a href="#categories">悬疑与犯罪</a></li>
+          <li><a href="#categories">科幻与奇幻</a></li>
+          <li><a href="#categories">动画与家庭</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>使用提示</h3>
+        <ul>
+          <li>内容仅供参考</li>
+          <li>请合理安排观影时间</li>
+          <li>注意用眼与休息</li>
+          <li><a href="#faq">查看常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 八度电影院 · 观影信息与选片参考页面
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        nav.classList.toggle('open');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          nav.classList.remove('open');
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+  </html>
