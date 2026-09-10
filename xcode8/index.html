@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xcode8 注释快捷键 - 快捷注释操作方法与常见问题说明</title>
+<meta name="description" content="整理 Xcode 8 注释快捷键的使用方法，包括单行注释、多行注释、取消注释、快捷键冲突排查以及注释代码的实用技巧，帮助 iOS 开发者快速提高编写效率。">
+<meta name="keywords" content="xcode8 注释快捷键,Xcode 8 注释,Xcode 快捷键,单行注释,多行注释,取消注释,iOS 开发工具">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --bg:#f5f6f8;
+    --panel:#ffffff;
+    --ink:#1d2129;
+    --ink-soft:#4e5969;
+    --line:#e3e6eb;
+    --brand:#1479ff;
+    --brand-deep:#0b5ed7;
+    --code-bg:#1f2430;
+    --code-ink:#e6e9f0;
+    --accent:#f7f8fa;
+    --radius:10px;
+    --shadow:0 2px 10px rgba(29,33,41,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img{max-width:100%;display:block;}
+
+  /* 顶部 */
+  .topbar{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .topbar-inner{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 20px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+  .logo{
+    font-size:18px;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:.3px;
+    white-space:nowrap;
+  }
+  .logo span{color:var(--brand);}
+  .nav{
+    display:flex;
+    gap:22px;
+    flex:1;
+    overflow-x:auto;
+  }
+  .nav a{
+    color:var(--ink-soft);
+    font-size:14px;
+    white-space:nowrap;
+    padding:4px 0;
+    border-bottom:2px solid transparent;
+  }
+  .nav a:hover{color:var(--brand);text-decoration:none;border-bottom-color:var(--brand);}
+  .topbar .tip{
+    font-size:13px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+
+  /* 首屏 */
+  .hero{
+    background:linear-gradient(135deg,#0f1b2d 0%,#16324f 55%,#1b4a7a 100%);
+    color:#fff;
+    padding:52px 20px 56px;
+  }
+  .hero-inner{
+    max-width:1120px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:30px;
+    line-height:1.35;
+    font-weight:700;
+    margin-bottom:16px;
+    letter-spacing:.3px;
+  }
+  .hero p{
+    color:#c3d2e4;
+    font-size:15px;
+    margin-bottom:22px;
+    max-width:560px;
+  }
+  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
+  .hero-tags span{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:999px;
+    padding:5px 13px;
+    font-size:13px;
+    color:#dbe7f5;
+  }
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:11px 22px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:600;
+    transition:.2s;
+  }
+  .btn-primary{background:var(--brand);color:#fff;}
+  .btn-primary:hover{background:var(--brand-deep);text-decoration:none;}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);text-decoration:none;}
+
+  .hero-card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    backdrop-filter:blur(4px);
+  }
+  .hero-card h2{
+    font-size:14px;
+    font-weight:600;
+    color:#9fc3ea;
+    letter-spacing:1px;
+    margin-bottom:16px;
+    text-transform:uppercase;
+  }
+  .key-list{list-style:none;}
+  .key-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    padding:9px 0;
+    border-bottom:1px dashed rgba(255,255,255,.15);
+    font-size:14px;
+  }
+  .key-list li:last-child{border-bottom:none;}
+  .key-list .k-desc{color:#d5e2f1;}
+  kbd{
+    display:inline-block;
+    background:#0c1725;
+    border:1px solid #2c4a6b;
+    border-bottom-width:2px;
+    border-radius:5px;
+    padding:2px 8px;
+    font-family:"SFMono-Regular",Consolas,Menlo,monospace;
+    font-size:12.5px;
+    color:#eaf2fb;
+    white-space:nowrap;
+  }
+
+  /* 主体布局 */
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 300px;
+    gap:32px;
+    padding:44px 0 60px;
+  }
+  .main-col{min-width:0;}
+  .side-col{min-width:0;}
+
+  section.block{margin-bottom:40px;}
+  .block-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:18px;
+    border-left:4px solid var(--brand);
+    padding-left:12px;
+  }
+  .block-head h2{
+    font-size:20px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .block-head .sub{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px 26px;
+  }
+  .card + .card{margin-top:16px;}
+
+  p.lead{
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+
+  /* 快捷键表格 */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff;}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    min-width:520px;
+  }
+  thead th{
+    background:var(--accent);
+    text-align:left;
+    padding:12px 16px;
+    font-weight:600;
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody td{
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#fafbfd;}
+  tbody td:first-child{color:var(--ink);font-weight:500;}
+
+  /* 步骤 */
+  .steps{list-style:none;counter-reset:step;}
+  .steps li{
+    position:relative;
+    padding:0 0 18px 44px;
+    counter-increment:step;
+  }
+  .steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:1px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--brand);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .steps li::after{
+    content:"";
+    position:absolute;
+    left:13.5px;
+    top:32px;
+    bottom:2px;
+    width:1px;
+    background:var(--line);
+  }
+  .steps li:last-child{padding-bottom:0;}
+  .steps li:last-child::after{display:none;}
+  .steps strong{display:block;color:var(--ink);margin-bottom:4px;font-size:15px;}
+  .steps p{color:var(--ink-soft);font-size:14px;}
+
+  /* 代码块 */
+  pre{
+    background:var(--code-bg);
+    color:var(--code-ink);
+    border-radius:8px;
+    padding:16px 18px;
+    overflow-x:auto;
+    font-family:"SFMono-Regular",Consolas,Menlo,monospace;
+    font-size:13.5px;
+    line-height:1.65;
+    margin:12px 0;
+  }
+  pre .cmt{color:#7d8aa3;}
+  pre .kw{color:#7cc4ff;}
+  code.inline{
+    background:#eef2f8;
+    color:#c7254e;
+    border-radius:4px;
+    padding:1px 6px;
+    font-family:"SFMono-Regular",Consolas,Menlo,monospace;
+    font-size:13px;
+  }
+
+  /* 提示条 */
+  .notice{
+    border-left:4px solid #ffb020;
+    background:#fff8e8;
+    border-radius:0 8px 8px 0;
+    padding:14px 18px;
+    font-size:14px;
+    color:#7a5a12;
+    margin:16px 0;
+  }
+  .notice strong{color:#5c430c;}
+
+  /* FAQ */
+  .faq-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  .faq-q{
+    width:100%;
+    text-align:left;
+    background:#fff;
+    border:none;
+    cursor:pointer;
+    padding:16px 20px;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    font-family:inherit;
+  }
+  .faq-q:hover{background:#fafbfd;}
+  .faq-q .arrow{
+    flex:0 0 auto;
+    color:var(--brand);
+    font-size:18px;
+    transition:transform .25s;
+  }
+  .faq-item.open .faq-q .arrow{transform:rotate(45deg);}
+  .faq-a{
+    display:none;
+    padding:0 20px 18px;
+    color:var(--ink-soft);
+    font-size:14px;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+  .faq-item.open .faq-a{display:block;}
+
+  /* 侧栏 */
+  .side-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:20px 22px;
+    margin-bottom:20px;
+  }
+  .side-card h3{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink);
+  }
+  .side-card ul{list-style:none;}
+  .side-card ul li{
+    padding:7px 0;
+    font-size:14px;
+    color:var(--ink-soft);
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+  }
+  .side-card ul li::before{
+    content:"›";
+    color:var(--brand);
+    font-weight:700;
+    line-height:1.5;
+  }
+  .side-card ul li a{color:var(--ink-soft);}
+  .side-card ul li a:hover{color:var(--brand);}
+  .side-note{
+    font-size:13px;
+    color:var(--ink-soft);
+    line-height:1.75;
+  }
+  .mini-key{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:13px;
+    padding:7px 0;
+    border-bottom:1px dashed var(--line);
+    color:var(--ink-soft);
+  }
+  .mini-key:last-child{border-bottom:none;}
+
+  /* 页脚 */
+  footer{
+    background:#141a24;
+    color:#9aa7b8;
+    padding:34px 20px 26px;
+    font-size:13.5px;
+  }
+  .footer-inner{
+    max-width:1120px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .footer-inner .fcol{min-width:180px;}
+  .footer-inner h4{
+    color:#e4eaf2;
+    font-size:14px;
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .footer-inner a{color:#9aa7b8;}
+  .footer-inner a:hover{color:#fff;}
+  .footer-inner ul{list-style:none;}
+  .footer-inner ul li{padding:3px 0;}
+  .copyright{
+    max-width:1120px;
+    margin:24px auto 0;
+    padding-top:16px;
+    border-top:1px solid #232c39;
+    font-size:12.5px;
+    color:#6d7a8c;
+  }
+
+  /* 响应式 */
+  @media (max-width:960px){
+    .hero-inner{grid-template-columns:1fr;gap:28px;}
+    .layout{grid-template-columns:1fr;gap:28px;}
+    .side-col{order:2;}
+  }
+  @media (max-width:640px){
+    body{font-size:14.5px;}
+    .topbar-inner{height:auto;padding:12px 16px;flex-wrap:wrap;gap:10px;}
+    .nav{gap:16px;order:3;width:100%;}
+    .topbar .tip{display:none;}
+    .hero{padding:36px 16px 40px;}
+    .hero h1{font-size:23px;}
+    .wrap{padding:0 16px;}
+    .layout{padding:30px 0 46px;}
+    .card{padding:18px 16px;}
+    .block-head h2{font-size:18px;}
+    .block-head .sub{display:none;}
+    .side-card{padding:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">Xcode <span>快捷键手册</span></div>
+    <nav class="nav">
+      <a href="#basic">基础注释</a>
+      <a href="#multi">多行注释</a>
+      <a href="#conflict">冲突排查</a>
+      <a href="#tips">实用技巧</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="tip">适用于 Xcode 8 及相近版本</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Xcode 8 注释快捷键：单行、多行与取消注释的完整操作说明</h1>
+      <p>在 Xcode 8 中给代码添加或取消注释，最常用的组合键是 <kbd>Command</kbd> + <kbd>/</kbd>。选中若干行后按下它，编辑器会按当前语言规则批量注释或还原；未选中时则作用于光标所在的那一行。下面把具体用法、失效原因和排查思路一次讲清楚。</p>
+      <div class="hero-tags">
+        <span>单行注释</span>
+        <span>多行注释</span>
+        <span>取消注释</span>
+        <span>快捷键失效</span>
+        <span>代码可读性</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#basic">查看操作步骤</a>
+        <a class="btn btn-ghost" href="#faq">排查不生效问题</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h2>常用键位速查</h2>
+      <ul class="key-list">
+        <li><span class="k-desc">注释 / 取消注释</span><kbd>⌘ /</kbd></li>
+        <li><span class="k-desc">向右缩进</span><kbd>⌘ ]</kbd></li>
+        <li><span class="k-desc">向左缩进</span><kbd>⌘ [</kbd></li>
+        <li><span class="k-desc">移动当前行</span><kbd>⌘ ⌥ [ / ]</kbd></li>
+        <li><span class="k-desc">代码补全</span><kbd>⌃ Space</kbd></li>
+        <li><span class="k-desc">快速打开文件</span><kbd>⌘ ⇧ O</kbd></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+
+    <main class="main-col">
+
+      <section class="block" id="basic">
+        <div class="block-head">
+          <h2>一、基础注释快捷键怎么用</h2>
+          <span class="sub">单行与批量操作</span>
+        </div>
+        <div class="card">
+          <p class="lead">Xcode 8 的注释命令由 <strong>Editor &gt; Structure &gt; Comment Selection</strong> 菜单项提供，默认绑定的快捷键是 <kbd>Command</kbd> + <kbd>/</kbd>。它属于“开关式”操作：同一组代码被注释后，再次按下会取消注释，不需要记忆两个不同的键位。</p>
+          <ul class="steps">
+            <li>
+              <strong>单行注释</strong>
+              <p>把光标停在目标代码行任意位置，直接按 <kbd>⌘</kbd> + <kbd>/</kbd>，该行行首会被加上 <code class="inline">//</code>。再次按下即可去掉。</p>
+            </li>
+            <li>
+              <strong>多行批量注释</strong>
+              <p>用鼠标拖选或按住 <kbd>Shift</kbd> 配合方向键选中连续多行，再按 <kbd>⌘</kbd> + <kbd>/</kbd>，Xcode 会为每一行分别添加行注释，而不是生成一个块注释。</p>
+            </li>
+            <li>
+              <strong>不连续多选</strong>
+              <p>按住 <kbd>Command</kbd> 可以点选多处不连续的代码位置，插入多个光标后再按快捷键，可一次处理多个分散片段。</p>
+            </li>
+            <li>
+              <strong>取消注释</strong>
+              <p>选中已被注释的代码，再次按 <kbd>⌘</kbd> + <kbd>/</kbd>。若选区内既有已注释行又有普通行，Xcode 通常按“统一处理”的方式执行，建议先确认选区范围。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="block" id="multi">
+        <div class="block-head">
+          <h2>二、行注释与块注释的区别</h2>
+          <span class="sub">按语言规则选择写法</span>
+        </div>
+        <div class="card">
+          <p class="lead">快捷键生成的是行注释，而块注释需要手动书写。两者用途不同，混用会影响阅读体验和调试效率。</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>对比项</th>
+                  <th>行注释</th>
+                  <th>块注释</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Swift 写法</td>
+                  <td><code class="inline">// 说明文字</code></td>
+                  <td><code class="inline">/* 说明文字 */</code></td>
+                </tr>
+                <tr>
+                  <td>Objective-C 写法</td>
+                  <td><code class="inline">// 说明文字</code></td>
+                  <td><code class="inline">/* 说明文字 */</code></td>
+                </tr>
+                <tr>
+                  <td>是否支持快捷键</td>
+                  <td>支持，<kbd>⌘</kbd> + <kbd>/</kbd></td>
+                  <td>需手动输入</td>
+                </tr>
+                <tr>
+                  <td>典型场景</td>
+                  <td>临时屏蔽某几行、逐行解释</td>
+                  <td>大段说明、版权头、文档注释</td>
+                </tr>
+                <tr>
+                  <td>嵌套限制</td>
+                  <td>可多层叠加</td>
+                  <td>通常不支持嵌套</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><span class="cmt">// 行注释：适合逐行说明与临时屏蔽</span>
+<span class="kw">let</span> timeout: TimeInterval = 30
+
+<span class="cmt">/* 块注释：
+   适合成段说明，
+   但不要在内部再嵌套块注释 */</span>
+<span class="kw">func</span> loadData() { }</pre>
+          <div class="notice">
+            <strong>注意：</strong>如果代码里已经存在 <code class="inline">/* ... */</code>，再用块注释去包裹它，容易造成注释范围错乱。调试时优先使用行注释快捷键，更安全。
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="conflict">
+        <div class="block-head">
+          <h2>三、快捷键不生效时的排查顺序</h2>
+          <span class="sub">从输入法与焦点开始查</span>
+        </div>
+        <div class="card">
+          <p class="lead">按下 <kbd>⌘</kbd> + <kbd>/</kbd> 没有反应，通常不是 Xcode 本身的问题，而是焦点、输入法或键位绑定被占用。可以按下面的顺序逐项确认。</p>
+          <ol class="steps">
+            <li>
+              <strong>确认编辑器获得焦点</strong>
+              <p>光标必须位于代码编辑区内。如果焦点在导航栏、调试控制台或搜索框上，快捷键不会作用于代码。</p>
+            </li>
+            <li>
+              <strong>切换英文输入法</strong>
+              <p>部分中文输入法会拦截 <kbd>/</kbd> 键，导致组合键无法传递。切换到系统英文输入法后再试一次。</p>
+            </li>
+            <li>
+              <strong>检查键位绑定是否被改动</strong>
+              <p>打开 Xcode &gt; Preferences &gt; Key Bindings，搜索 “Comment”，查看 Comment Selection 当前绑定的键位。若为空或与其他命令冲突，可重新指定。</p>
+            </li>
+            <li>
+              <strong>排除系统级快捷键占用</strong>
+              <p>在“系统偏好设置 &gt; 键盘 &gt; 快捷键”中检查是否有其他应用占用了 <kbd>⌘</kbd> + <kbd>/</kbd>。</p>
+            </li>
+            <li>
+              <strong>确认文件类型可被识别</strong>
+              <p>纯文本或未识别的文件类型可能没有对应的注释规则，此时快捷键不会产生任何效果。</p>
+            </li>
+          </ol>
+          <div class="notice">
+            <strong>提示：</strong>如果只是偶尔失效，先点一下代码区域再按快捷键，多数情况下即可恢复。
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="tips">
+        <div class="block-head">
+          <h2>四、让注释更好用的几个习惯</h2>
+          <span class="sub">可读性与协作</span>
+        </div>
+        <div class="card">
+          <p class="lead">快捷键解决的是“写得快”，注释质量解决的是“看得懂”。下面这些习惯在日常开发中比较实用。</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>习惯</th>
+                  <th>说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>注释解释“为什么”</td>
+                  <td>代码本身说明“做了什么”，注释更适合补充背景、约束条件和取舍原因。</td>
+                </tr>
+                <tr>
+                  <td>调试注释加标记</td>
+                  <td>临时屏蔽的代码可加统一标记，例如 <code class="inline">// TODO:</code> 或 <code class="inline">// FIXME:</code>，方便后续搜索还原。</td>
+                </tr>
+                <tr>
+                  <td>提交前清理</td>
+                  <td>被注释掉的废弃代码不建议长期保留，容易造成阅读干扰，也会让版本对比变乱。</td>
+                </tr>
+                <tr>
+                  <td>文档注释单独写</td>
+                  <td>对外接口建议使用文档注释格式，便于生成说明文档和编辑器提示。</td>
+                </tr>
+                <tr>
+                  <td>保持缩进一致</td>
+                  <td>注释符号后加一个空格，视觉上更整齐，也符合多数团队的代码规范。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><span class="cmt">// TODO: 接入新的缓存策略后再移除这段兜底逻辑</span>
+<span class="cmt">// FIXME: 低内存设备上偶发闪烁，待复现</span>
+<span class="kw">func</span> refreshUI() {
+    <span class="cmt">// 先展示本地缓存，避免白屏</span>
+    renderCache()
+}</pre>
+        </div>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>五、常见问题</h2>
+          <span class="sub">按点击展开</span>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Xcode 8 注释快捷键和更新版本一样吗？
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-a">
+            核心键位 <kbd>⌘</kbd> + <kbd>/</kbd> 在多个 Xcode 版本中保持一致，菜单路径也基本沿用 Editor &gt; Structure 下的 Comment Selection。不同版本可能在界面文案或键位设置面板的布局上有差异，但操作方式没有本质变化。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            为什么选中多行后只注释了第一行？
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-a">
+            常见原因是选区未真正覆盖多行，或焦点在按下快捷键前发生了转移。可以先把光标放到选区末尾确认范围，再重新按一次快捷键。另外，如果选区跨越了不同语言的文件片段，注释规则也可能不一致。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            快捷键能否改成其他键位？
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-a">
+            可以。在 Xcode 的 Key Bindings 设置中搜索 Comment Selection，双击右侧键位列即可重新录入组合键。建议避开系统或其他应用已占用的组合，以免再次冲突。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            注释掉的代码会影响编译吗？
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-a">
+            被正确注释的内容不会参与编译。但如果注释符号位置有误，例如把行注释写在了字符串内部，或块注释未闭合，就可能引发语法错误。出现编译报错时，可以先检查最近修改过的注释区域。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            有没有必要记住其他编辑快捷键？
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-a">
+            注释只是编辑操作中的一项。缩进、移动行、快速打开文件和代码补全同样高频，配合使用能明显减少鼠标操作。建议先熟悉三到五个最常用的组合，再逐步扩展。
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="side-col">
+      <div class="side-card">
+        <h3>本页要点</h3>
+        <ul>
+          <li>注释与取消注释共用同一组快捷键</li>
+          <li>选中多行可批量添加行注释</li>
+          <li>块注释需手动输入且不宜嵌套</li>
+          <li>失效时优先检查输入法与焦点</li>
+          <li>键位可在 Key Bindings 中修改</li>
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <h3>键位速记</h3>
+        <div class="mini-key"><span>注释 / 取消</span><kbd>⌘ /</kbd></div>
+        <div class="mini-key"><span>向右缩进</span><kbd>⌘ ]</kbd></div>
+        <div class="mini-key"><span>向左缩进</span><kbd>⌘ [</kbd></div>
+        <div class="mini-key"><span>上移当前行</span><kbd>⌘ ⌥ [</kbd></div>
+        <div class="mini-key"><span>下移当前行</span><kbd>⌘ ⌥ ]</kbd></div>
+        <div class="mini-key"><span>快速打开</span><kbd>⌘ ⇧ O</kbd></div>
+      </div>
+
+      <div class="side-card">
+        <h3>使用建议</h3>
+        <p class="side-note">注释快捷键适合临时屏蔽代码和逐行说明。涉及对外接口时，建议改用文档注释格式；提交代码前，记得清理调试阶段留下的临时注释，保持代码库整洁。</p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="fcol">
+      <h4>Xcode 快捷键手册</h4>
+      <p style="line-height:1.8;max-width:260px;">整理 Xcode 常用编辑操作与快捷键用法，帮助开发者减少重复操作，把精力留在代码本身。</p>
+    </div>
+    <div class="fcol">
+      <h4>页面导航</h4>
+      <ul>
+        <li><a href="#basic">基础注释</a></li>
+        <li><a href="#multi">行注释与块注释</a></li>
+        <li><a href="#conflict">冲突排查</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>相关主题</h4>
+      <ul>
+        <li>代码缩进与格式化</li>
+        <li>多光标编辑</li>
+        <li>键位绑定设置</li>
+        <li>调试期临时屏蔽</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2024 Xcode 快捷键手册 · 内容以 Xcode 8 的常规使用方式为基础整理，界面细节以实际版本为准。
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+  </html>
