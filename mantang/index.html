@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>满堂红广州-广州满堂红房产中介服务与置业信息指南</title>
+<meta name="description" content="满堂红广州频道，提供广州二手房、租房、新房、商铺写字楼等置业信息参考，介绍满堂红在广州的房产中介服务内容、找房流程、费用常识与常见问题，帮助购房者和租客更高效地了解广州楼市。">
+<meta name="keywords" content="满堂红广州,广州满堂红,广州房产中介,广州二手房,广州租房,广州新房,满堂红置业">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --red:#c62828;
+    --red-deep:#8e1c1c;
+    --red-soft:#fdecea;
+    --ink:#1f2328;
+    --ink-2:#4a5056;
+    --ink-3:#7b8288;
+    --line:#e6e8eb;
+    --bg:#f6f7f9;
+    --white:#ffffff;
+    --gold:#c9a227;
+    --radius:10px;
+    --shadow:0 2px 10px rgba(31,35,40,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.7;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px;}
+
+  /* ---------- 顶部条 ---------- */
+  .topbar{
+    background:var(--red-deep);
+    color:#f7dcdc;
+    font-size:13px;
+    line-height:34px;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar span{opacity:.92;}
+  .topbar .tb-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .topbar .tb-links a:hover{color:#fff;text-decoration:underline;}
+
+  /* ---------- 页眉 ---------- */
+  header.site-head{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+    box-shadow:0 1px 4px rgba(31,35,40,.04);
+  }
+  .head-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .logo{
+    width:46px;height:46px;flex:0 0 46px;
+    border-radius:12px;
+    background:linear-gradient(140deg,var(--red),#e04b3a);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;font-weight:700;letter-spacing:1px;
+    box-shadow:0 4px 12px rgba(198,40,40,.28);
+  }
+  .brand .bt{line-height:1.3;}
+  .brand .bt strong{font-size:19px;letter-spacing:.5px;}
+  .brand .bt small{display:block;color:var(--ink-3);font-size:12.5px;letter-spacing:.5px;}
+
+  nav.main-nav ul{display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main-nav a{
+    display:block;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14.5px;
+    color:var(--ink-2);
+    transition:.18s;
+  }
+  nav.main-nav a:hover{background:var(--red-soft);color:var(--red);}
+  nav.main-nav a.active{background:var(--red);color:#fff;}
+
+  .head-tel{
+    font-size:13px;
+    color:var(--ink-3);
+    text-align:right;
+    line-height:1.5;
+  }
+  .head-tel b{display:block;color:var(--red);font-size:17px;letter-spacing:.5px;}
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 380px at 88% -10%,rgba(198,40,40,.18),transparent 62%),
+      linear-gradient(160deg,#fff 0%,#fdf6f5 55%,#f7f8fa 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:36px;
+    padding:46px 0 50px;
+    align-items:center;
+  }
+  .hero-tag{
+    display:inline-block;
+    background:var(--red-soft);
+    color:var(--red);
+    font-size:12.5px;
+    padding:5px 12px;
+    border-radius:20px;
+    letter-spacing:.6px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:31px;
+    line-height:1.35;
+    letter-spacing:.5px;
+    margin-bottom:14px;
+  }
+  .hero h1 em{font-style:normal;color:var(--red);}
+  .hero p.lead{
+    color:var(--ink-2);
+    font-size:15.5px;
+    max-width:600px;
+    margin-bottom:22px;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
+  .btn{
+    display:inline-block;
+    padding:11px 24px;
+    border-radius:26px;
+    font-size:15px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.18s;
+  }
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(198,40,40,.25);}
+  .btn-primary:hover{background:var(--red-deep);}
+  .btn-ghost{border-color:#e0c9c6;color:var(--red);background:#fff;}
+  .btn-ghost:hover{background:var(--red-soft);}
+
+  .hero-facts{display:flex;gap:26px;flex-wrap:wrap;border-top:1px dashed #ecd6d3;padding-top:18px;}
+  .hero-facts div{font-size:13px;color:var(--ink-3);}
+  .hero-facts strong{display:block;font-size:17px;color:var(--ink);letter-spacing:.5px;}
+
+  .search-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .search-card h2{font-size:16px;margin-bottom:4px;}
+  .search-card .sc-sub{font-size:12.5px;color:var(--ink-3);margin-bottom:16px;}
+  .field{margin-bottom:12px;}
+  .field label{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:5px;}
+  .field select,.field input{
+    width:100%;
+    padding:9px 12px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-size:14px;
+    color:var(--ink);
+    background:#fcfcfd;
+    font-family:inherit;
+  }
+  .field select:focus,.field input:focus{outline:none;border-color:#e3a9a2;background:#fff;}
+  .search-card .btn{width:100%;text-align:center;padding:11px 0;margin-top:6px;}
+  .sc-note{font-size:12px;color:var(--ink-3);margin-top:12px;line-height:1.6;}
+
+  /* ---------- 通用区块 ---------- */
+  section{padding:46px 0;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head .kicker{
+    font-size:12.5px;
+    color:var(--red);
+    letter-spacing:2px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .sec-head h2{font-size:23px;letter-spacing:.5px;}
+  .sec-head p{color:var(--ink-3);font-size:14px;margin-top:8px;max-width:760px;}
+
+  .alt-bg{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* ---------- 业务分类 ---------- */
+  .biz-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .biz-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    transition:.2s;
+    border-top:3px solid var(--red);
+  }
+  .biz-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(31,35,40,.08);}
+  .biz-card .ic{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--red-soft);color:var(--red);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;font-weight:700;margin-bottom:14px;
+  }
+  .biz-card h3{font-size:16.5px;margin-bottom:8px;}
+  .biz-card p{font-size:13.5px;color:var(--ink-2);}
+  .biz-card ul{margin-top:12px;}
+  .biz-card li{
+    font-size:13px;color:var(--ink-3);
+    padding-left:14px;position:relative;line-height:1.9;
+  }
+  .biz-card li::before{
+    content:"";position:absolute;left:0;top:11px;
+    width:5px;height:5px;border-radius:50%;background:#e3a9a2;
+  }
+
+  /* ---------- 区域列表 ---------- */
+  .area-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  .area-item{
+    background:#fbfbfc;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+  }
+  .area-item h3{font-size:15.5px;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+  .area-item h3 .dot{width:7px;height:7px;border-radius:50%;background:var(--red);}
+  .area-item p{font-size:13.5px;color:var(--ink-2);}
+  .area-item .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;}
+  .area-item .tags span{
+    font-size:12px;color:var(--ink-3);
+    background:#fff;border:1px solid var(--line);
+    padding:2px 9px;border-radius:12px;
+  }
+
+  /* ---------- 流程 ---------- */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:step;}
+  .step{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 16px;
+    position:relative;
+  }
+  .step::before{
+    counter-increment:step;
+    content:counter(step);
+    position:absolute;top:-13px;left:16px;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--red);color:#fff;
+    font-size:13px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step h3{font-size:15px;margin:6px 0 8px;}
+  .step p{font-size:13px;color:var(--ink-2);}
+
+  /* ---------- 费用与常识 ---------- */
+  .two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start;}
+  .info-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+  }
+  .info-card h3{font-size:17px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--red);line-height:1.2;}
+  .info-card h4{font-size:14.5px;margin:16px 0 6px;color:var(--red-deep);}
+  .info-card p{font-size:14px;color:var(--ink-2);margin-bottom:8px;}
+  .info-card ul.plain li{
+    font-size:14px;color:var(--ink-2);
+    padding-left:16px;position:relative;line-height:1.95;
+  }
+  .info-card ul.plain li::before{
+    content:"";position:absolute;left:0;top:12px;
+    width:6px;height:6px;border-radius:50%;background:#e3a9a2;
+  }
+  .tip{
+    background:var(--red-soft);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:13.5px;
+    color:var(--red-deep);
+    line-height:1.75;
+    margin-top:16px;
+  }
+
+  /* ---------- 置业参考表 ---------- */
+  .table-scroll{overflow-x:auto;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px;}
+  thead th{
+    background:#faf6f5;
+    color:var(--red-deep);
+    text-align:left;
+    padding:13px 16px;
+    font-size:13.5px;
+    font-weight:600;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  tbody td{
+    padding:13px 16px;
+    border-bottom:1px solid #f1f2f4;
+    color:var(--ink-2);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover td{background:#fcfbfb;}
+  tbody td strong{color:var(--ink);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{display:grid;gap:12px;}
+  details.faq{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:0 20px;
+    transition:.2s;
+  }
+  details.faq[open]{border-color:#eccfca;box-shadow:0 6px 18px rgba(198,40,40,.06);}
+  details.faq summary{
+    cursor:pointer;
+    padding:16px 0;
+    font-size:15px;
+    font-weight:600;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    align-items:center;
+  }
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{
+    content:"+";
+    color:var(--red);
+    font-size:19px;
+    font-weight:400;
+    flex:0 0 auto;
+    transition:.2s;
+  }
+  details.faq[open] summary::after{content:"–";}
+  details.faq .faq-body{
+    padding:0 0 18px;
+    font-size:14px;
+    color:var(--ink-2);
+    border-top:1px dashed #f0e2e0;
+    padding-top:14px;
+  }
+
+  /* ---------- 侧栏提示 ---------- */
+  .notice{
+    background:linear-gradient(150deg,#fff,#fdf7f6);
+    border:1px solid #f0dcd9;
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .notice h3{font-size:16px;margin-bottom:10px;color:var(--red-deep);}
+  .notice p{font-size:13.5px;color:var(--ink-2);margin-bottom:8px;}
+
+  /* ---------- 页脚 ---------- */
+  footer.site-foot{
+    background:#22262b;
+    color:#b9bfc6;
+    padding:44px 0 22px;
+    font-size:13.5px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:28px;
+    padding-bottom:26px;
+    border-bottom:1px solid #34393f;
+  }
+  .foot-grid h4{color:#fff;font-size:15px;margin-bottom:12px;font-weight:600;}
+  .foot-grid p{line-height:1.85;color:#9aa1a8;}
+  .foot-grid li{line-height:2.1;}
+  .foot-grid a:hover{color:#fff;}
+  .foot-bottom{
+    padding-top:18px;
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+    color:#828a92;
+    font-size:12.5px;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1024px){
+    .hero-inner{grid-template-columns:1fr;gap:28px;padding:38px 0 42px;}
+    .hero h1{font-size:27px;}
+    .biz-grid{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(3,1fr);}
+    .two-col{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    body{font-size:14.5px;}
+    .topbar .wrap{justify-content:center;text-align:center;}
+    .head-inner{justify-content:center;text-align:center;}
+    .head-tel{text-align:center;width:100%;}
+    nav.main-nav ul{justify-content:center;}
+    .hero h1{font-size:23px;}
+    .hero p.lead{font-size:14.5px;}
+    .hero-facts{gap:18px;}
+    .hero-facts strong{font-size:15.5px;}
+    section{padding:34px 0;}
+    .sec-head h2{font-size:19.5px;}
+    .biz-grid{grid-template-columns:1fr;}
+    .area-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;gap:22px;}
+    .foot-grid{grid-template-columns:1fr;gap:22px;}
+    .foot-bottom{justify-content:center;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部信息条 -->
+<div class="topbar">
+  <div class="wrap">
+    <span>广州本地置业信息参考 · 房源信息以实际核验为准</span>
+    <div class="tb-links">
+      <a href="#biz">服务分类</a>
+      <a href="#area">区域参考</a>
+      <a href="#flow">找房流程</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </div>
+</div>
+
+<!-- 页眉 -->
+<header class="site-head">
+  <div class="wrap head-inner">
+    <div class="brand">
+      <div class="logo">满</div>
+      <div class="bt">
+        <strong>满堂红广州</strong>
+        <small>广州置业与房产中介信息服务</small>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#biz" class="active">服务分类</a></li>
+        <li><a href="#area">区域参考</a></li>
+        <li><a href="#flow">找房流程</a></li>
+        <li><a href="#cost">费用常识</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <div class="head-tel">
+      门店与经纪人信息
+      <b>以官方渠道为准</b>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero" style="padding:0;">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="hero-tag">广州 · 二手房 / 租房 / 新房 / 商办</span>
+        <h1>在广州找房，先弄清<em>满堂红</em>能提供哪些房产中介服务</h1>
+        <p class="lead">
+          如果你是在搜索“满堂红广州”，多半是想了解这家在广州经营多年的房产中介机构，能提供二手房买卖、住宅租赁、新房代理、商铺写字楼租售等哪些服务，以及委托看房、签约、过户的大致流程和费用常识。本页按类别梳理这些信息，方便你带着明确问题去门店或官方渠道进一步核实。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#biz">查看服务分类</a>
+          <a class="btn btn-ghost" href="#flow">了解找房流程</a>
+        </div>
+        <div class="hero-facts">
+          <div><strong>二手房</strong>买卖居间与带看</div>
+          <div><strong>住宅租赁</strong>整租与合租</div>
+          <div><strong>新房代理</strong>楼盘信息对接</div>
+          <div><strong>商办物业</strong>商铺与写字楼</div>
+        </div>
+      </div>
+
+      <aside class="search-card" aria-label="找房条件筛选">
+        <h2>按需求梳理找房条件</h2>
+        <p class="sc-sub">先明确条件，再与经纪人沟通，效率更高</p>
+        <div class="field">
+          <label for="purpose">需求类型</label>
+          <select id="purpose">
+            <option>购买二手房</option>
+            <option>租赁住宅</option>
+            <option>购买新房</option>
+            <option>商铺 / 写字楼</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="district">意向区域</label>
+          <select id="district">
+            <option>天河区</option>
+            <option>越秀区</option>
+            <option>海珠区</option>
+            <option>荔湾区</option>
+            <option>白云区</option>
+            <option>番禺区</option>
+            <option>黄埔区</option>
+            <option>其他区域</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget">预算范围（可填大致区间）</label>
+          <input id="budget" type="text" placeholder="例如：总价 300 万以内 / 月租 4000 元内">
+        </div>
+        <button class="btn btn-primary" type="button" onclick="collectDemand()">整理我的找房条件</button>
+        <p class="sc-note" id="demandResult">填写后点击按钮，可生成一份便于与经纪人沟通的条件摘要。本页不收集、不上传任何信息。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 服务分类 -->
+  <section id="biz">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">SERVICE</div>
+        <h2>满堂红广州的主要房产服务方向</h2>
+        <p>房产中介的业务通常围绕“房源信息 + 带看撮合 + 手续协助”展开。不同城市、不同门店的具体业务范围可能存在差异，以下为常见分类，实际以门店说明和书面委托协议为准。</p>
+      </div>
+      <div class="biz-grid">
+        <article class="biz-card">
+          <div class="ic">二</div>
+          <h3>二手房买卖</h3>
+          <p>为买方和卖方提供房源匹配、实地带看、价格沟通与签约协助。</p>
+          <ul>
+            <li>按区域、户型、总价筛选房源</li>
+            <li>安排集中或单独带看</li>
+            <li>协助沟通议价与交易条件</li>
+          </ul>
+        </article>
+        <article class="biz-card">
+          <div class="ic">租</div>
+          <h3>住宅租赁</h3>
+          <p>覆盖整租、合租等常见租赁需求，适合新到广州工作或换租的人群。</p>
+          <ul>
+            <li>按通勤线路与地铁站找房</li>
+            <li>核实房屋基本状况与配套</li>
+            <li>协助明确租期、押付方式</li>
+          </ul>
+        </article>
+        <article class="biz-card">
+          <div class="ic">新</div>
+          <h3>新房代理</h3>
+          <p>对接在售楼盘信息，帮助购房者了解户型、区位与开盘节奏。</p>
+          <ul>
+            <li>楼盘基础资料介绍</li>
+            <li>看房行程安排</li>
+            <li>购房资格与贷款常识提示</li>
+          </ul>
+        </article>
+        <article class="biz-card">
+          <div class="ic">商</div>
+          <h3>商铺与写字楼</h3>
+          <p>面向经营者与小企业的商用物业租售信息对接。</p>
+          <ul>
+            <li>关注人流、交通与业态限制</li>
+            <li>了解租金、管理费构成</li>
+            <li>协助确认交付与装修条件</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 区域参考 -->
+  <section id="area" class="alt-bg">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">DISTRICT</div>
+        <h2>广州各区域找房时的关注重点</h2>
+        <p>广州不同行政区的房源结构、通勤条件和生活配套差异较大。下面按常见关注点做梳理，帮助你在与经纪人沟通前先缩小范围。</p>
+      </div>
+      <div class="area-grid">
+        <div class="area-item">
+          <h3><span class="dot"></span>天河区</h3>
+          <p>商务办公集中，通勤需求旺盛，房源类型覆盖较广，租金与总价整体偏高，适合在核心商务区上班的人群。</p>
+          <div class="tags"><span>通勤优先</span><span>户型多样</span><span>预算要求较高</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>越秀区</h3>
+          <p>老城区生活配套成熟，教育、医疗资源集中，二手房楼龄差异明显，看房时需重点核实楼龄与房屋现状。</p>
+          <div class="tags"><span>配套成熟</span><span>楼龄差异大</span><span>学位关注度高</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>海珠区</h3>
+          <p>跨江通勤便利，近年新盘与改善型房源关注度上升，适合兼顾市区通勤与居住环境的购房者。</p>
+          <div class="tags"><span>改善型</span><span>地铁覆盖</span><span>临江板块</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>荔湾区</h3>
+          <p>传统居住区，生活气息浓厚，部分板块旧改推进中，租赁与刚需购房需求相对稳定。</p>
+          <div class="tags"><span>生活氛围</span><span>刚需为主</span><span>旧改板块</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>白云区</h3>
+          <p>面积大、板块差异明显，靠近地铁与主干道的片区通勤更便利，租金区间相对宽一些。</p>
+          <div class="tags"><span>预算友好</span><span>板块差异大</span><span>交通优先</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>番禺区</h3>
+          <p>大型社区较多，居住环境与配套相对完整，适合对居住面积有要求、能接受较长通勤的人群。</p>
+          <div class="tags"><span>大型社区</span><span>居住环境</span><span>通勤时间</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>黄埔区</h3>
+          <p>产业与新区建设带动房源供给，新盘与次新房占比较高，适合关注新社区与产业园通勤的群体。</p>
+          <div class="tags"><span>次新房</span><span>产业通勤</span><span>新社区</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>增城 / 从化等外围</h3>
+          <p>总价与租金门槛相对较低，居住空间更宽裕，但需重点评估通勤时间与日常配套的便利程度。</p>
+          <div class="tags"><span>门槛较低</span><span>空间宽裕</span><span>通勤评估</span></div>
+        </div>
+        <div class="area-item">
+          <h3><span class="dot"></span>跨区比较建议</h3>
+          <p>建议把“通勤时间、预算上限、生活配套、房屋楼龄”四项列成清单，逐项打分后再决定重点看哪几个板块。</p>
+          <div class="tags"><span>清单对比</span><span>实地看房</span><span>多次复核</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 找房流程 -->
+  <section id="flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">PROCESS</div>
+        <h2>通过房产中介找房的一般流程</h2>
+        <p>不同业务类型（买卖、租赁、新房）细节不同，但大致都会经过以下环节。了解流程有助于你在每一步确认该核对哪些材料。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>明确需求</h3>
+          <p>先确定用途、预算、区域和户型，把“必须满足”和“可以妥协”的条件分开写清楚。</p>
+        </div>
+        <div class="step">
+          <h3>登记与匹配</h3>
+          <p>向门店说明条件，由经纪人按房源库匹配并推荐，注意核对房源信息的更新时间。</p>
+        </div>
+        <div class="step">
+          <h3>实地看房</h3>
+          <p>看房时关注采光、噪音、渗水、电梯、物业与周边配套，租赁还需确认家电家具清单。</p>
+        </div>
+        <div class="step">
+          <h3>确认条件</h3>
+          <p>就价格、付款方式、交房时间、押付比例等达成一致，重要约定应落到书面协议中。</p>
+        </div>
+        <div class="step">
+          <h3>签约与后续</h3>
+          <p>核对产权或出租方身份、费用明细与违约条款，买卖交易还需按流程办理贷款与过户手续。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 费用常识 + 注意事项 -->
+  <section id="cost" class="alt-bg">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">COST &amp; NOTES</div>
+        <h2>中介费用与交易常识</h2>
+        <p>中介服务费的具体比例、收取方式和承担方，会因城市政策、业务类型和委托协议而不同。以下为常见的了解方向，实际以门店公示和书面协议为准。</p>
+      </div>
+      <div class="two-col">
+        <article class="info-card">
+          <h3>先弄清这几类费用</h3>
+          <h4>1. 中介服务费</h4>
+          <p>买卖与租赁的中介服务费通常按成交价或月租的一定比例计收，由哪一方承担、何时支付，应在委托阶段就明确写入协议。</p>
+          <h4>2. 押金与租金</h4>
+          <p>租赁常见的“押几付几”因房源和房东要求而异，签约前应确认押金退还条件、租金递增方式和物业水电费的结算方式。</p>
+          <h4>3. 交易相关税费</h4>
+          <p>二手房买卖涉及契税、增值税及附加、个人所得税等，具体适用情况与房屋性质、持有年限、家庭住房套数有关，建议以税务部门口径为准。</p>
+          <h4>4. 其他可能支出</h4>
+          <p>如贷款相关费用、评估费、物业交割费用等，应逐项询问是否有、由谁承担，避免签约后出现预期外支出。</p>
+          <div class="tip">提示：任何费用都建议索取正规票据，并在协议中写明金额、支付节点与退还条件。对口头承诺要格外谨慎。</div>
+        </article>
+
+        <aside class="notice">
+          <h3>看房与签约时的核对清单</h3>
+          <p>① 产权人或出租方身份与房屋权属证明是否一致；</p>
+          <p>② 房屋是否存在抵押、查封、共有人未到场等情况；</p>
+          <p>③ 租赁房源的家电家具清单、维修责任如何划分；</p>
+          <p>④ 物业费、水电燃气是否结清，交割时间如何约定；</p>
+          <p>⑤ 合同中违约条款、解约条件、交房标准是否写清楚；</p>
+          <p>⑥ 中介服务内容与收费是否与协议一致。</p>
+          <p style="margin-top:12px;color:var(--ink-3);font-size:13px;">
+            以上为通用核对方向，不构成法律或税务意见。涉及金额较大或权属复杂的情形，建议咨询专业人士。
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 置业参考表 -->
+  <section id="reference">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">REFERENCE</div>
+        <h2>不同需求对应的关注重点对照</h2>
+        <p>把需求类型和关注重点对应起来，能减少无效看房。下表为一般性参考，具体判断仍需结合房源实际情况。</p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>需求类型</th>
+              <th>优先关注</th>
+              <th>常见忽略点</th>
+              <th>建议准备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>首次购房</strong></td>
+              <td>总价承受能力、贷款资格、通勤时间</td>
+              <td>税费与装修预算、楼龄对贷款年限的影响</td>
+              <td>收入与征信材料、首付资金安排</td>
+            </tr>
+            <tr>
+              <td><strong>改善换房</strong></td>
+              <td>户型、采光、社区环境、学位与配套</td>
+              <td>先卖后买或先买后卖的资金衔接</td>
+              <td>现有房产的处置计划与时间表</td>
+            </tr>
+            <tr>
+              <td><strong>住宅租赁</strong></td>
+              <td>通勤线路、租金、押付方式、租期</td>
+              <td>家电家具状况、维修责任、退租条件</td>
+              <td>工作证明、预算上限、入住时间</td>
+            </tr>
+            <tr>
+              <td><strong>商铺选址</strong></td>
+              <td>人流走向、业态限制、租金与租期</td>
+              <td>消防与经营资质要求、转让费问题</td>
+              <td>经营类型说明、预算与回本预期</td>
+            </tr>
+            <tr>
+              <td><strong>写字楼租用</strong></td>
+              <td>交通便利度、面积与工位规划、管理费</td>
+              <td>空调与加班时段费用、装修免租期</td>
+              <td>团队规模、租期规划、交付标准需求</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="alt-bg">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于满堂红广州的常见问题</h2>
+        <p>以下问题来自搜索“满堂红广州”时较常见的关注点，回答以通用行业常识为主，具体情况请以官方渠道和门店说明为准。</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq" open>
+          <summary>满堂红在广州主要做哪些房产业务？</summary>
+          <div class="faq-body">
+            从行业常见情况看，房产中介机构的业务一般包括二手房买卖居间、住宅租赁、新房代理以及商铺写字楼等商用物业的租售对接。满堂红在广州的具体业务范围、覆盖区域和门店分布，建议通过官方渠道或就近门店确认，不同门店的侧重点可能不同。
+          </div>
+        </details>
+        <details class="faq">
+          <summary>通过中介找房，中介费一般怎么算？</summary>
+          <div class="faq-body">
+            中介服务费通常按成交价或月租的一定比例计收，由买卖或租赁的哪一方承担、何时支付，会因城市政策与委托协议而不同。较为稳妥的做法是：在委托前就询问清楚收费比例、计算基数、支付节点和退还条件，并要求在书面协议中写明。
+          </div>
+        </details>
+        <details class="faq">
+          <summary>看房时应该重点检查哪些方面？</summary>
+          <div class="faq-body">
+            二手房建议关注采光通风、墙体渗水、管道与电路、电梯运行、物业管理和周边配套；租赁房源还需确认家电家具是否可用、维修由谁负责、水电燃气是否结清。看房最好安排在不同时段，白天看采光，晚上看噪音和居住氛围。
+          </div>
+        </details>
+        <details class="faq">
+          <summary>签约前需要核实哪些材料？</summary>
+          <div class="faq-body">
+            买卖交易中，应核实产权人身份与权属证明是否一致，了解房屋是否存在抵押、查封或共有人未到场等情况。租赁中应核实出租方是否为产权人或已获授权，并确认租期、押付方式、违约条款和交房标准。涉及复杂权属或大额资金时，建议咨询专业人士。
+          </div>
+        </details>
+        <details class="faq">
+          <summary>广州不同区域应该怎么选？</summary>
+          <div class="faq-body">
+            可以先把“通勤时间、预算上限、生活配套、房屋楼龄”列为四项硬指标，再逐区比较。核心商务区通勤方便但成本较高，外围区域居住空间更宽裕但通勤时间更长。建议先锁定两到三个板块实地走访，再决定重点看哪里。
+          </div>
+        </details>
+        <details class="faq">
+          <summary>本页提供的信息可以直接作为交易依据吗？</summary>
+          <div class="faq-body">
+            本页内容为一般性信息整理与常识说明，不构成房源推荐、价格承诺或法律、税务意见。房源状态、费用标准和政策口径都可能发生变化，实际交易请以官方渠道、门店书面说明和主管部门规定为准。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>满堂红广州</h4>
+        <p>本页围绕“满堂红广州”这一搜索需求，整理广州房产中介服务分类、区域找房关注点、交易流程与费用常识，供置业者与租客参考。</p>
+      </div>
+      <div>
+        <h4>服务分类</h4>
+        <ul>
+          <li><a href="#biz">二手房买卖</a></li>
+          <li><a href="#biz">住宅租赁</a></li>
+          <li><a href="#biz">新房代理</a></li>
+          <li><a href="#biz">商铺与写字楼</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>找房参考</h4>
+        <ul>
+          <li><a href="#area">区域关注重点</a></li>
+          <li><a href="#flow">找房一般流程</a></li>
+          <li><a href="#cost">费用与核对清单</a></li>
+          <li><a href="#reference">需求对照表</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>信息说明</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li>房源信息以实际核验为准</li>
+          <li>费用标准以书面协议为准</li>
+          <li>政策口径以主管部门为准</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>本页为信息整理类页面，不构成任何交易承诺或专业意见。</span>
+      <span>内容仅供参考 · 请以官方渠道核实</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function collectDemand(){
+    var purpose = document.getElementById('purpose');
+    var district = document.getElementById('district');
+    var budget = document.getElementById('budget');
+    var out = document.getElementById('demandResult');
+    var p = purpose ? purpose.value : '';
+    var d = district ? district.value : '';
+    var b = budget && budget.value.trim() ? budget.value.trim() : '暂未填写预算';
+    out.textContent = '你的找房条件：' + p + '，意向区域为' + d + '，预算范围：' + b +
+      '。建议带着这份条件与经纪人沟通，并逐项确认房源更新时间、费用构成和协议条款。本页不会保存或上传任何信息。';
+  }
+</script>
+
+</body>
+  </html>
